@@ -128,7 +128,8 @@ myTerminal = "alacritty"   -- Sets default terminal
 -- myTerminal = "kitty"   -- Sets default terminal
 
 myBrowser :: String
-myBrowser = "firefox"
+myBrowser = "google-chrome-stable"
+-- myBrowser = "firefox"
 -- myBrowser = "qutebrowser"
 -- myBrowser = "brave"
 
@@ -652,7 +653,7 @@ myKeys home conf =
     , ("M-s"     , spawn $ "dm-search.sh")
     , ("M-b"     , spawn $ "dm-bookmarks.sh")
     , ("M-v"     , spawn "clipmenu")
-    , ("M-c"     , spawn "mkdir -p ~/captures; flameshot gui -p ~/captures/")
+    , ("M-c"     , spawn myBrowser)
     , ("M-d"     , spawn myEditor)
     , ("M-o"     , spawn "dmenu_run -i -p \"Run: \"")
     , ("M-/"     , spawn "dm-qutebrowser-history.sh")
@@ -801,6 +802,7 @@ myKeys home conf =
     , ("<XF86Calculator>"        , runOrRaise "qalculate-gtk" (resource =? "qalculate-gtk"))
     , ("<XF86Eject>"             , spawn "toggleeject")
     , ("<Print>"                 , spawn "scrotd 0")
+    , ("M-<Print>"               , spawn "mkdir -p ~/captures; flameshot gui -p ~/captures/")
     ]
     -- Appending search engine prompts to keybindings list.
     -- Look at "search engines" section of this config for values for "k".
