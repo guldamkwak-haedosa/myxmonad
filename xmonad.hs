@@ -777,6 +777,8 @@ myKeys home conf =
     , ("M-S-."        , onGroup W.focusUp')    -- Switch focus to prev tab
     , ("M-g"          , submap $ conf  `mkKeymap` mySubLayoutKeys)
 
+    , ("M-<up>"       , spawn "horizontal.sh" )
+    , ("M-<down>"     , spawn "vertical.sh" )
 
     -- Scratchpads
     , ("M-z <Return>" , namedScratchpadAction myScratchPads "termSP")
