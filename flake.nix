@@ -16,7 +16,12 @@
     in {
       hmModule = import ./hmModule.nix inputs.wallpapers;
       devShell.${system} =
-        pkgs.mkShell { buildInputs = with pkgs; [ xmonad-with-packages ]; };
+        pkgs.mkShell { buildInputs = with pkgs; [
+                         (haskellPackages.ghcWithPackages (p: with p; [
+                            xmonad
+                            xmonad-contrib
+                         ]))
+                       ]; };
     };
 
 }
